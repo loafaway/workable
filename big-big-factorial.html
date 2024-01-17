@@ -12,7 +12,7 @@
 		function factorial(n) {
 			// factorial of n, namely n!
 			let L = 1n;  // 'big-integer' type
-			for (let i = 1; i <= Number(n); i++) L *= BigInt(i);
+			for (let i = 1; i <= n; i++) L *= BigInt(i);
 			return L;
 		}
 	</script>
