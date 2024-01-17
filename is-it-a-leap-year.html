@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-tw">
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width">
+	<title>閏年判別</title>
+
+	<script type="text/javascript">
+		function isLeap(year) {
+			let y = true;
+
+			if (year % 4 != 0) {
+				y = false;
+			} else {
+				if (year % 100 != 0) {
+					// ;
+				} else {
+					if (year % 400 != 0) {
+						y = false;
+					} else {
+						// ;
+					}
+				}
+			}
+
+			return y;
+		}
+	</script>
+
+	<style>
+		.sty-1 {
+			padding: 0.5rem;
+			font-size: 1rem;
+			font-family: 新細明體;
+			background-color: lightblue;
+			color: dimgray;
+		}
+
+		.sty-2 {
+			font-size: 18pt;
+			color: dimgray;
+		}
+
+		.sty-3 {
+			width: 25em;
+			padding: 4em;
+			border: 2pt solid purple;
+			background-color: khaki;
+		}
+
+		.mono {
+			font-family: Monospace;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>閏年判別</h2>
+
+	A year represented as a number is a leap year if
+	<ol><li>it is divisible by 400;</li><li>otherwise, it is divisible by 4 but not 100.</li></ol>
+	Here is the JavaScript code for determining whether a given year is a leap year.
+
+	<pre><code>
+		function isLeap(year) {
+			let y = true;
+
+			if (year % 4 != 0) {
+				y = false;
+			} else {
+				if (year % 100 != 0) {
+					// ;
+				} else {
+					if (year % 400 != 0) {
+						y = false;
+					} else {
+						// ;
+					}
+				}
+			}
+
+			return y;
+		}
+	</code></pre><br>
+
+	<form class="sty-3">
+		<label for="leap" class="sty-1"><b>Please type a year: </b><input type="text" id="num" size="8" placeholder="(number)" value="2024" accesskey="N"></label>&thinsp;
+		<input type="button" id="leap" class="mono" accesskey="B" value="LEAP YEAR CHECKER"><br><br>
+		<input type="text" id="yes" class="sty-2" placeholder="（閏年判別）" size="29" readonly>
+	</form>
+
+	<script type="text/javascript">
+		// elements used
+		const num = document.getElementById("num");
+		const leap = document.getElementById("leap");
+		const yes = document.getElementById("yes");
+
+		num.onkeyup = () => {
+			leap.disabled = false;
+			yes.value = ""; 
+		}
+
+		leap.onclick = () => {
+			const year = parseInt(num.value);
+			leap.disabled = true;
+
+			if (Number.isNaN(year)) {
+				yes.value = "The input is not a number.";
+			} else if (300000 < year || year < 0) {
+				num.value = year;  // possible adjustment to the input
+				yes.value = "The year should be in [1, 300000].";
+			}  else {
+				num.value = String(year);  // input 'correctly' adjusted, perhaps
+				if (isLeap(year)) {
+					yes.value = `The year ${year} is a leap year.`;
+				} else {
+					yes.value = `The year ${year} is NOT a leap year.`;
+				}
+			}
+		}
+	</script>
+</body>    
+</html>
