@@ -28,11 +28,12 @@
 
 	<style>
 		.sty-1 {
-			padding: 0.5rem;
-			font-size: 1rem;
 			font-family: 新細明體;
-			background-color: lightblue;
+			font-size: 1rem;
 			color: dimgray;
+			background-color: lightblue;
+			border-radius: 4px;
+			padding: 0.5rem;
 		}
 
 		.sty-2 {
@@ -41,10 +42,12 @@
 		}
 
 		.sty-3 {
-			width: 25em;
-			padding: 4em;
-			border: 2pt solid purple;
+			width: 25rem;
+			height: auto;
 			background-color: khaki;
+			border: 2pt solid purple;
+			border-radius: 5px;
+			padding: 4rem;
 		}
 
 		.mono {
@@ -82,11 +85,11 @@
 		}
 	</code></pre><br>
 
-	<form class="sty-3">
+	<div class="sty-3">
 		<label for="leap" class="sty-1"><b>Please type a year: </b><input type="text" id="num" size="8" placeholder="(number)" value="2024" accesskey="N"></label>&thinsp;
 		<input type="button" id="leap" class="mono" accesskey="B" value="LEAP YEAR CHECKER"><br><br>
 		<input type="text" id="yes" class="sty-2" placeholder="（閏年判別）" size="29" readonly>
-	</form>
+	</div>
 
 	<script type="text/javascript">
 		// elements used
