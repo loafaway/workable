@@ -5,7 +5,7 @@
 	<title>閏年判別</title>
 
 	<script type="text/javascript">
-		function isLeap(year) {
+		function isleap(year) {
 			let y = true;
 
 			if (year % 4 != 0) {
@@ -61,7 +61,7 @@
 	Here is the JavaScript code for determining whether a given year is a leap year.
 
 	<pre><code>
-		function isLeap(year) {
+		function isleap(year) {
 			let y = true;
 
 			if (year % 4 != 0) {
@@ -105,12 +105,12 @@
 
 			if (Number.isNaN(year)) {
 				yes.value = "The input is not a number.";
-			} else if (300000 < year || year < 0) {
-				num.value = year;  // possible adjustment to the input
+			} else if (300000 < year || year <= 0) {
+				num.value = String(year);  // possible adjustment to the input
 				yes.value = "The year should be in [1, 300000].";
 			}  else {
 				num.value = String(year);  // input 'correctly' adjusted, perhaps
-				if (isLeap(year)) {
+				if (isleap(year)) {
 					yes.value = `The year ${year} is a leap year.`;
 				} else {
 					yes.value = `The year ${year} is NOT a leap year.`;
