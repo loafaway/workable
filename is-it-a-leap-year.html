@@ -100,10 +100,12 @@
 		num.onkeyup = () => {
 			leap.disabled = false;
 			yes.value = ""; 
-		}
+		};
 
 		leap.onclick = () => {
 			const year = parseInt(num.value);
+
+			// one click for a given number
 			leap.disabled = true;
 
 			if (Number.isNaN(year)) {
@@ -119,7 +121,7 @@
 					yes.value = `The year ${year} is NOT a leap year.`;
 				}
 			}
-		}
+		};
 	</script>
 </body>    
 </html>
