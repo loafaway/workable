@@ -110,7 +110,7 @@
 
 			if (Number.isNaN(year)) {
 				yes.value = "The input is not a number.";
-			} else if (300000 < year || year <= 0) {
+			} else if (!(1 <= year && year <= 300000)) {
 				num.value = String(year);  // possible adjustment to the input
 				yes.value = "The year should be in [1, 300000].";
 			}  else {
