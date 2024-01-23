@@ -27,21 +27,21 @@
 	</script>
 
 	<style>
-		.sty-1 {
+		#lbl {
 			font-family: 新細明體;
 			font-size: 1rem;
-			color: dimgray;
+			color: #202020;
 			background-color: lightblue;
 			border-radius: 4px;
 			padding: 0.5rem;
 		}
 
-		.sty-2 {
+		#yes {
 			font-size: 18px;
 			color: dimgray;
 		}
 
-		.sty-3 {
+		#one {
 			width: 25rem;
 			height: auto;
 			background-color: khaki;
@@ -50,7 +50,7 @@
 			padding: 4rem;
 		}
 
-		.mono {
+		#leap {
 			font-family: monospace;
 		}
 	</style>
@@ -85,10 +85,10 @@
 		}
 	</pre>
 
-	<div class="sty-3">
-		<label for="num" class="sty-1"><b>Please type a year: </b><input type="text" id="num" size="8" placeholder="(number)" value="2024" accesskey="N"></label>
-		<input type="button" id="leap" class="mono" accesskey="B" value="LEAP YEAR CHECKER"><br><br>
-		<input type="text" id="yes" class="sty-2" placeholder="（閏年判別）" size="29" readonly>
+	<div id="one">
+		<label for="num" id="lbl"><b>Please type a year: </b><input type="text" id="num" size="8" placeholder="(number)" value="2024" accesskey="N"></label>
+		<input type="button" id="leap" accesskey="B" value="LEAP YEAR CHECKER"><br><br>
+		<input type="text" id="yes" placeholder="（閏年判別）" size="29" readonly>
 	</div>
 
 	<script type="text/javascript">
