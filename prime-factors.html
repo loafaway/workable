@@ -131,14 +131,25 @@
 				return true;
 			}
 		</script>
+
+		<style>
+			#one {
+				width: max-content;
+				line-height: 1.25rem;
+				white-space: nowrap;
+				border: 1px solid darkgray;
+				border-radius: 2px;
+				padding: 3px;
+			}
+		</style>
 	</head>
 
 	<body>
-		給定一個整數 \(n\)，其中 \(1\lt n\le 9007199254740991\)，試找出 \(n\) 的所有的質因數。
+		給定一個整數 \(n\)，其中 \(1\lt n\le 9007199254740991\)，試找出 \(n\) 的所有的質因數。 (Find all the prime factors of a 64-bit non-zero, non-negative whole number, which is constrained as above.)<br><br>
 
-		<div>
-			<label for="num">Find all the prime factors of a 64-bit non-zero, non-negative whole number, which is limited as above.</label>
-			<input type="text" id="num" name="num" placeholder="(whole number)" value="1232112345" accesskey="N">
+		<div id="one">
+			<label for="num"><span style="background-color: #e8e3da">你的整數以及其所有的質因數</span></label><br>
+			<input type="text" id="num" name="num" placeholder="(whole number)" size="25" value="1232112345" accesskey="N">
 			<button id="fact" onclick="doit()" accesskey="B">Factorize It</button>
 			<textarea id="txt" name="txt" placeholder="(never seen)" readonly>Answers will be shown here.</textarea>
 		</div>
@@ -146,7 +157,7 @@
 		<script>
 			document.getElementById("num").onkeyup = () => {
 				document.getElementById("fact").disabled = false;
-				document.getElementById("txt").value = "";
+				document.getElementById("txt").value = "";  // display area cleared
 			};
 		</script>
 	</body>

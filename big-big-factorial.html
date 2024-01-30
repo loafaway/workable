@@ -16,12 +16,23 @@
 				return L;
 			}
 		</script>
+
+		<style>
+			#one {
+				width: max-content;
+				line-height: 1.25rem;
+				white-space: nowrap;
+				border: 1px solid darkgray;
+				border-radius: 2px;
+				padding: 9px;
+			}
+		</style>
 	</head>
 
 	<body>
 		階乘的定義：<br>
-		&emsp;\(n!=n\times (n-1)\times (n-2)\times\cdots\times 3\times 2 \times 1\)<br>
-		&emsp;\(\phantom{n!}=n\times (n-1)!\)<br>
+		&emsp;&emsp;\(n!=n\times (n-1)\times (n-2)\times\cdots\times 3\times 2 \times 1\)<br>
+		&emsp;&emsp;\(\phantom{n!}=n\times (n-1)!\)<br>
 		其中 \(n\ge 0\)，而 \(0!\) 被定義為 \(1\)。
 
 		<p>
@@ -35,9 +46,10 @@
 			\(20!=2432902008176640000\)
 		</p>
 
-		<div>
-			<input type="text" id="num" name="num" placeholder="(whole number)" accesskey="N" value="20">
-			<input type="button" id="fact" name="fact" accesskey="B" value="Factorial-ize Me!"><br>
+		<div id="one">
+			<label for="num"><span style="background-color: #e8e3da">請在左側的空格裡鍵入你的數字</span></label><br>
+			<input type="text" id="num" name="num" placeholder="(whole number)" size="6" accesskey="N" value="20">
+			<input type="button" id="fact" name="fact" accesskey="B" value="Factorial-ize Me!">
 			<textarea id="txt" name="txt" placeholder="(never seen)" readonly>Here I am.</textarea>
 		</div>
 
@@ -74,7 +86,7 @@
 		<script>
 			num.onkeyup = () => {
 				fact.disabled = false;
-				txt.value = "";
+				txt.value = "";  // display area cleared
 			};
 		</script>
 	</body>
